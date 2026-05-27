@@ -44,7 +44,7 @@ export function Differentiators() {
           }}
         >
           <span style={{ display: "block", width: "20px", height: "0.5px", background: "var(--amber)" }} />
-          Not an agency
+          Advisory, not an agency
         </div>
         <h2
           style={{
@@ -56,7 +56,7 @@ export function Differentiators() {
             marginBottom: "0.9rem",
           }}
         >
-          Different by design.
+          An advisory firm,<br />not an agency.
         </h2>
         <p
           style={{

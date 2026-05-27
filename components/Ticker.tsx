@@ -1,7 +1,7 @@
 "use client";
 
 const items = [
-  "Big Four-Grade Consulting",
+  "AI-Native Analytics Advisory",
   "VC-Grade Analytics",
   "AI Agent Observability",
   "Marketing Attribution",

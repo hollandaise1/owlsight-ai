@@ -16,15 +16,31 @@ export function Footer() {
     >
       <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
         <OwlLogo size={22} muted />
-        <span
-          style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "0.85rem",
-            color: "var(--muted)",
-          }}
-        >
-          OwlSight AI
-        </span>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.15rem" }}>
+          <span
+            style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: "0.85rem",
+              color: "var(--muted)",
+              lineHeight: 1,
+            }}
+          >
+            OwlSight AI
+          </span>
+          <span
+            style={{
+              fontFamily: "'IBM Plex Mono', monospace",
+              fontSize: "0.5rem",
+              color: "var(--muted)",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              opacity: 0.55,
+              lineHeight: 1,
+            }}
+          >
+            AI-Native Analytics Advisory
+          </span>
+        </div>
       </div>
       <div
         style={{

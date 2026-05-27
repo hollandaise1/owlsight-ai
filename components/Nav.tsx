@@ -34,17 +34,32 @@ export function Nav() {
     >
       <a href="#" style={{ display: "flex", alignItems: "center", gap: "0.6rem", textDecoration: "none" }}>
         <OwlLogo size={32} />
-        <span
-          style={{
-            fontFamily: "'Playfair Display', serif",
-            fontSize: "1.1rem",
-            fontWeight: 500,
-            color: "var(--parchment)",
-            letterSpacing: "-0.01em",
-          }}
-        >
-          OwlSight <span style={{ color: "var(--amber)" }}>AI</span>
-        </span>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.1rem" }}>
+          <span
+            style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: "1.1rem",
+              fontWeight: 500,
+              color: "var(--parchment)",
+              letterSpacing: "-0.01em",
+              lineHeight: 1,
+            }}
+          >
+            OwlSight <span style={{ color: "var(--amber)" }}>AI</span>
+          </span>
+          <span
+            style={{
+              fontFamily: "'IBM Plex Mono', monospace",
+              fontSize: "0.52rem",
+              color: "var(--muted)",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              lineHeight: 1,
+            }}
+          >
+            AI-Native Analytics Advisory
+          </span>
+        </div>
       </a>
 
       {/* desktop links */}

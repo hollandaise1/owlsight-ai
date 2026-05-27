@@ -31,7 +31,7 @@ export function Hero() {
             textTransform: "uppercase",
           }}
         >
-          VC Analytics · AI Observability · GTM Science · Executive Operating Model
+          AI-Native Analytics Advisory
         </span>
       </motion.div>
 
