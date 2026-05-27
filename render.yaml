@@ -1,9 +1,9 @@
 services:
   - type: web
     name: owlsight-ai
-    runtime: static
+    env: static
     buildCommand: npm install && npm run build
-    staticPublishPath: ./out
+    staticPublishPath: out
     pullRequestPreviewsEnabled: true
     headers:
       - path: /*
