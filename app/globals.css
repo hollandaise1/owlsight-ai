@@ -1,26 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&family=Geist:wght@300;400;500&display=swap");
 @import "tailwindcss";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #0e0c08;
+  --parchment: #f7f3ec;
+  --cream: #efe9dc;
+  --amber: #c8870a;
+  --amber-dim: #a06d08;
+  --amber-pale: rgba(200, 135, 10, 0.08);
+  --muted: #7a7268;
+  --border: rgba(200, 135, 10, 0.18);
+  --border-faint: rgba(200, 135, 10, 0.09);
+  --card: #111009;
+  --card-border: rgba(200, 135, 10, 0.14);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ink);
+  color: var(--parchment);
+  font-family: "Geist", sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  line-height: 1.65;
+}
+
+.ticker-inner {
+  display: flex;
+  gap: 3.5rem;
+  animation: ticker 36s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
