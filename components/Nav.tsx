@@ -1,12 +1,20 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { OwlLogo } from "./OwlLogo";
+import type { SiteContent } from "@/lib/content";
 
-export function Nav() {
+interface NavProps {
+  content: SiteContent["nav"];
+}
+
+export function Nav({ content }: NavProps) {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [tipVisible, setTipVisible] = useState(false);
+  const pathname = usePathname();
+  const isZh = pathname?.startsWith("/zh");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -24,9 +32,7 @@ export function Nav() {
         borderBottom: "0.5px solid var(--border)",
         position: "sticky",
         top: 0,
-        background: scrolled
-          ? "rgba(14,12,8,0.98)"
-          : "rgba(14,12,8,0.92)",
+        background: scrolled ? "rgba(14,12,8,0.98)" : "rgba(14,12,8,0.92)",
         backdropFilter: "blur(20px)",
         zIndex: 100,
         transition: "background 0.3s",
@@ -57,21 +63,17 @@ export function Nav() {
               lineHeight: 1,
             }}
           >
-            AI-Native Analytics Advisory
+            {content.descriptor}
           </span>
         </div>
       </a>
 
-      {/* desktop links */}
-      <ul
-        style={{
-          display: "flex",
-          gap: "2.5rem",
-          listStyle: "none",
-        }}
-        className="hidden-mobile"
-      >
-        {[["#services", "services"], ["#approach", "approach"], ["#about", "about"]].map(([href, label]) => (
+      <ul style={{ display: "flex", gap: "2.5rem", listStyle: "none", alignItems: "center" }} className="hidden-mobile">
+        {[
+          ["#services", content.services],
+          ["#approach", content.approach],
+          ["#about", content.about],
+        ].map(([href, label]) => (
           <li key={href}>
             <a
               href={href}
@@ -91,6 +93,34 @@ export function Nav() {
             </a>
           </li>
         ))}
+
+        {/* language toggle */}
+        <li>
+          <Link
+            href={isZh ? "/" : "/zh"}
+            style={{
+              color: "var(--muted)",
+              textDecoration: "none",
+              fontSize: "0.7rem",
+              letterSpacing: "0.08em",
+              fontFamily: "'IBM Plex Mono', monospace",
+              border: "0.5px solid var(--border)",
+              padding: "0.25rem 0.6rem",
+              borderRadius: "2rem",
+              transition: "color 0.2s, border-color 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.color = "var(--amber)";
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--amber)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.color = "var(--muted)";
+              (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
+            }}
+          >
+            {isZh ? "EN" : "中文"}
+          </Link>
+        </li>
       </ul>
 
       <div style={{ position: "relative" }}>
@@ -121,10 +151,9 @@ export function Nav() {
             setTipVisible(false);
           }}
         >
-          Book a call →
+          {content.cta}
         </a>
 
-        {/* tooltip */}
         <div
           style={{
             position: "absolute",
@@ -141,17 +170,9 @@ export function Nav() {
             transition: "opacity 0.18s ease, transform 0.18s ease",
           }}
         >
-          <span
-            style={{
-              fontFamily: "'IBM Plex Mono', monospace",
-              fontSize: "0.62rem",
-              color: "var(--muted)",
-              letterSpacing: "0.06em",
-            }}
-          >
-            Complimentary · no pitch · 30 min
+          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "0.62rem", color: "var(--muted)", letterSpacing: "0.06em" }}>
+            {content.tooltip}
           </span>
-          {/* caret */}
           <div
             style={{
               position: "absolute",

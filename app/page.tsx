@@ -1,3 +1,4 @@
+import { en } from "@/lib/content";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Ticker } from "@/components/Ticker";
@@ -11,15 +12,15 @@ import { Footer } from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Nav />
-      <Hero />
-      <Ticker />
-      <Pillars />
-      <WhoGrid />
-      <Approach />
-      <Differentiators />
-      <CTA />
-      <Footer />
+      <Nav content={en.nav} />
+      <Hero content={en.hero} />
+      <Ticker items={en.ticker} />
+      <Pillars content={en.pillars} />
+      <WhoGrid content={en.who} />
+      <Approach content={en.approach} />
+      <Differentiators content={en.diff} />
+      <CTA content={en.cta} />
+      <Footer content={en.footer} />
     </>
   );
 }
