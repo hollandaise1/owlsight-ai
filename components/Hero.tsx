@@ -81,7 +81,9 @@ export function Hero() {
           </p>
           <div style={{ display: "flex", gap: "1rem", alignItems: "center", flexWrap: "wrap" }}>
             <a
-              href="mailto:hello@owlsight.ai"
+              href="https://calendar.app.google/81QiES5Z8scJqect6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary"
               style={{
                 background: "var(--amber)",
@@ -101,7 +103,7 @@ export function Hero() {
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--amber-dim)")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--amber)")}
             >
-              Free architecture review →
+              Book a Call →
             </a>
             <a
               href="#services"

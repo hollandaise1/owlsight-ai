@@ -80,7 +80,9 @@ export function Nav() {
 
       <div style={{ position: "relative" }}>
         <a
-          href="mailto:hello@owlsight.ai"
+          href="https://calendar.app.google/81QiES5Z8scJqect6"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             background: "var(--amber)",
             color: "var(--ink)",
@@ -132,7 +134,7 @@ export function Nav() {
               letterSpacing: "0.06em",
             }}
           >
-            Responds within 24 hours
+            Complimentary · no pitch · 30 min
           </span>
           {/* caret */}
           <div

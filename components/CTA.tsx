@@ -2,6 +2,8 @@
 
 import { FadeIn } from "./FadeIn";
 
+const CALENDAR_URL = "https://calendar.app.google/81QiES5Z8scJqect6";
+
 export function CTA() {
   return (
     <section
@@ -54,18 +56,20 @@ export function CTA() {
             color: "var(--muted)",
             fontSize: "0.9rem",
             marginBottom: "2.5rem",
-            maxWidth: "460px",
+            maxWidth: "480px",
             marginLeft: "auto",
             marginRight: "auto",
-            lineHeight: 1.85,
+            lineHeight: 1.9,
           }}
         >
-          Request a free architecture review and diagnostic. No pitch, no obligation — a structured look at your data stack, intelligence gaps, and the highest-leverage moves available to you right now.
+          Book a complimentary call — no pitch, no agenda. Happy to dive deep on your data problem, upcoming deadlines, or wherever you're most stuck right now.
         </p>
 
-        <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", marginBottom: "3rem" }}>
+        <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", marginBottom: "1.5rem" }}>
           <a
-            href="mailto:hello@owlsight.ai"
+            href={CALENDAR_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               background: "var(--amber)",
               color: "var(--ink)",
@@ -84,7 +88,7 @@ export function CTA() {
             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--amber-dim)")}
             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--amber)")}
           >
-            Request a free diagnostic →
+            Book a Call →
           </a>
           <a
             href="#services"
@@ -106,6 +110,18 @@ export function CTA() {
             Review the four pillars →
           </a>
         </div>
+
+        <p
+          style={{
+            fontFamily: "'IBM Plex Mono', monospace",
+            fontSize: "0.62rem",
+            color: "var(--muted)",
+            letterSpacing: "0.08em",
+            opacity: 0.6,
+          }}
+        >
+          Complimentary · No obligation · Responds within 24 hours
+        </p>
       </FadeIn>
 
       <style>{`
